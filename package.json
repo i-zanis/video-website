@@ -24,6 +24,8 @@
     "chalk": "^4.1.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
     "utils.js": "^1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
