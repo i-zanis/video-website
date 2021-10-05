@@ -5,13 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "nodemon app.js",
+        "start": "node app.js"
   },
   "dependencies": {
     "colors": "^1.4.0",
     "core-js": "^3.6.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
     "mongoose": "^6.0.8",
     "morgan": "^1.10.0",
     "vue": "^2.6.11"
@@ -24,6 +25,7 @@
     "chalk": "^4.1.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "express": "^4.17.1",
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "utils.js": "^1.0.1",
