@@ -1,5 +1,6 @@
 const express = require('express');
-const chalk = require('chalk');
+const colors = require('colors');
+const morgan = require('morgan');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 
@@ -18,5 +19,5 @@ app.use((req,
 });
 
 app.listen(PORT, () => {
-  print(chalk.green(`[${new Date().toLocaleTimeString()}] App running on http://localhost:${PORT}`));
+  print(colors.green(`[${new Date().toLocaleTimeString()}] App running on http://localhost:${PORT}`));
 });
