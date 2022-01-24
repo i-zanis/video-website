@@ -1,7 +1,7 @@
 
-# youtube-vue 
+# In Developement
 
-# In Developerment
+# youtube-vue 
 
 ## Project setup
 ```
