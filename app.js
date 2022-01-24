@@ -2,16 +2,17 @@ const express = require('express');
 const colors = require('colors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
-const morgan = require('morgan');
+const DBConnect = require('./config/mongo-db');
 
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: './config/.env' });
 const app = express();
+const print = console.log;
+DBConnect();
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-const PORT = process.env.PORT || 4000;
-const print = console.log;
+const PORT = 3000;
 app.use((req,
   res,
   next) => {
