@@ -11,7 +11,6 @@ const categorySchema = new Schema({
     minLength: [3, 'Title requires at least 3 characters'],
     trim: true,
     unique: true,
-    // uniqueValidator, won't allow upper/lower combination
     uniqueCaseInsensitive: true,
     required: [true, 'Title is required'],
   },
@@ -23,6 +22,6 @@ const categorySchema = new Schema({
 },
 { timestamps: true });
 
-categorySchema.plugins(uniqueValidator, { message: '{PATH} already exists' });
+categorySchema.plugin(uniqueValidator, { message: '{PATH} already exists.' });
 
 module.exports = mongoose.model('Category', categorySchema);
