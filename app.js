@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 app.use('/api/v1/categories', categoryRoutes);
 
+const message = `App running on http://localhost:${PORT}`;
 app.listen(PORT, () => {
-  print(colors.cyan(`[${new Date().toLocaleTimeString()}] App running on http://localhost:${PORT}`));
+  print(colors.cyan(`[${new Date().toLocaleTimeString()}] ${message}`));
 });
