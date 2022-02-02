@@ -65,7 +65,12 @@ exports.updateCategory = async (req, res, next) => {
   }
 };
 
-exports.createCategories = async (req, res, next) => {
+/** ****************************************************************************
+ * Create Category
+ * Route: Post /api/v1/categories
+ * Access: Private
+ **************************************************************************** */
+exports.createCategory = async (req, res, next) => {
   try {
     const category = await Category.create(req.body);
     res.status(200)
@@ -74,7 +79,7 @@ exports.createCategories = async (req, res, next) => {
         data: category,
       });
   } catch (e) {
-    res.status(400)
+    return res.status(400)
       .json({
         success: false,
         error: e.message,
