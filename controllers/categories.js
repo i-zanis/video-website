@@ -82,6 +82,24 @@ exports.createCategories = async (req, res, next) => {
   }
 };
 
-// Create Category
-// Route: /categories
-// Access Admin|Private
+/** ****************************************************************************
+ * Delete Category
+ * Route: Delete /api/v1/{id}
+ * Access: Private
+ **************************************************************************** */
+exports.deleteCategory = async (req, res, next) => {
+  const category = Category.find(req.body);
+  if (!category) {
+    return res.status(400)
+      .json({
+        success: false,
+        error: `No category with id of ${req.params.id}`,
+      });
+  }
+  await category.remove();
+  return res.status(200)
+    .json({
+      success: true,
+      category,
+    });
+};
