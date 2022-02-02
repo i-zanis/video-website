@@ -7,15 +7,16 @@ const { Schema } = require('mongoose');
 
 const categorySchema = new Schema({
   title: {
-    String,
+    type: String,
     minLength: [3, 'Title requires at least 3 characters'],
     trim: true,
     unique: true,
+    // uniqueValidator, won't allow upper/lower combination
     uniqueCaseInsensitive: true,
     required: [true, 'Title is required'],
   },
   description: {
-    String,
+    type: String,
     minLength: [3, 'Description requires at least 3 characters'],
     required: [true, 'Description is required'],
   },
