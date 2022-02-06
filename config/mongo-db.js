@@ -12,7 +12,7 @@ const DBConnect = async () => {
       print(colors.red('Cannot connect to DB'), err);
     });
 
-  print(colors.bgGreen(`MongoDB connected: ${con.connection.host}`));
+  print(colors.bgGreen(`MongoDB connected: ${con.connection.host}`).black);
 };
 
 module.exports = DBConnect;
