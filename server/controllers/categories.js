@@ -1,12 +1,11 @@
 const Category = require('../models/category');
 
-// Admin rights to create categories
-// desc Get categories
-// route Get /api/v1/categories
-
+// Get all categories
+// Route: Get /api/v1/categories
+// Access: Private
 exports.getCategories = async (req, res, next) => {
-  const categories = await Category.find();
-  res.status(200)
+  const categories = Category.find();
+  return res.status(200)
     .json({
       success: true,
       data: categories,
@@ -36,7 +35,7 @@ exports.getCategory = async (req, res, next) => {
  * Update Category
  * Route: Put /api/v1/categories
  * Access: Private
- ***************************************************************************** */
+ **************************************************************************** */
 exports.updateCategory = async (req, res, next) => {
   try {
     const category = await Category.findByIdAndUpdate(req.params.id, req.body, {

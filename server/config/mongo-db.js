@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const colors = require('colors');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: './config/.env' });
+dotenv.config({ path: './server/config/.env' });
 const print = console.log;
 
 const DBConnect = async () => {
