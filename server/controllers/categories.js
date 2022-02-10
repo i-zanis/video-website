@@ -5,10 +5,11 @@ const Category = require('../models/category');
 // Access: Private
 exports.getCategories = async (req, res, next) => {
   const categories = await Category.find();
-  return res.status(200).json({
-    success: true,
-    data: categories,
-  });
+  res.status(200)
+    .json({
+      success: true,
+      data: categories,
+    });
 };
 
 // Get selected category
@@ -17,7 +18,7 @@ exports.getCategories = async (req, res, next) => {
 exports.getCategory = async (req, res, next) => {
   const category = await Category.findById(req.param.id);
   if (!category) {
-    return res.status(400)
+    res.status(400)
       .json({
         success: true,
         error: `Category with id of ${req.param.id} not found`,
@@ -43,19 +44,19 @@ exports.updateCategory = async (req, res, next) => {
       context: 'query',
     });
     if (!category) {
-      return res.status(400)
+      res.status(400)
         .json({
           success: true,
           error: `No category with id of ${req.param.id}`,
         });
     }
-    return res.status(200)
+    res.status(200)
       .json({
         success: true,
         data: category,
       });
   } catch (e) {
-    return res.status(400)
+    res.status(400)
       .json({
         success: false,
         error: e.message,
@@ -77,7 +78,7 @@ exports.createCategory = async (req, res, next) => {
         data: category,
       });
   } catch (e) {
-    return res.status(400)
+    res.status(400)
       .json({
         success: false,
         error: e.message,
@@ -93,14 +94,14 @@ exports.createCategory = async (req, res, next) => {
 exports.deleteCategory = async (req, res, next) => {
   const category = Category.find(req.body);
   if (!category) {
-    return res.status(400)
+    res.status(400)
       .json({
         success: false,
         error: `No category with id of ${req.params.id}`,
       });
   }
   await category.remove();
-  return res.status(200)
+  res.status(200)
     .json({
       success: true,
       category,
