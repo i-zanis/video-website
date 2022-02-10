@@ -5,7 +5,7 @@
   },
   "extends": [
     "plugin:vue/vue3-recommended",
-    "airbnb-base"
+    "airbnb"
   ],
   "globals": {
     "Atomics": "readonly",

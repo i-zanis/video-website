@@ -1,5 +1,5 @@
 {
-  "name": "youtube-vue",
+  "name": "video-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,9 +23,13 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-vue": "^7.20.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.13",
@@ -40,7 +44,8 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "prettier"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
