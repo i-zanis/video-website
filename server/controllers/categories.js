@@ -4,12 +4,11 @@ const Category = require('../models/category');
 // Route: Get /api/v1/categories
 // Access: Private
 exports.getCategories = async (req, res, next) => {
-  const categories = Category.find();
-  return res.status(200)
-    .json({
-      success: true,
-      data: categories,
-    });
+  const categories = await Category.find();
+  return res.status(200).json({
+    success: true,
+    data: categories,
+  });
 };
 
 // Get selected category
