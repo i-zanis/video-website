@@ -31,3 +31,15 @@ const clearData = async () => {
     console.log(e);
   }
 };
+
+/** Returns an array containing the CLI args passed when the Node.js
+ * process was launched.
+ * Type in the terminal
+ * To create data: node seeder -i
+ * To clear data:  node seeder -cd */
+if (process.argv[2] === '-id') {
+  importData();
+  // node seeder -d
+} else if (process.argv[2] === '-cd') {
+  clearData();
+}
