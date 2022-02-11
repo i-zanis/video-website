@@ -10,9 +10,10 @@ dotenv.config({ path: './config/.env' });
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
-DBConnect().then(
-  () => console.timeLog('Load Time'),
-);
+DBConnect()
+  .then(
+    () => console.timeLog('Load Time'),
+  );
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }

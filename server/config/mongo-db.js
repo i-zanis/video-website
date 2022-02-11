@@ -6,11 +6,9 @@ dotenv.config({ path: './server/config/.env' });
 const print = console.log;
 
 const DBConnect = async () => {
-  const con = await mongoose
-    .connect(process.env.MONGO)
-    .catch((err) => {
-      print(colors.red('Cannot connect to DB'), err);
-    });
+  const con = await mongoose.connect(process.env.MONGO).catch((err) => {
+    print(colors.red('Cannot connect to DB'), err);
+  });
 
   print(colors.bgGreen(`MongoDB connected: ${con.connection.host}`).black);
 };
