@@ -1,8 +1,10 @@
 const Category = require('../models/category');
 
-// Get all categories
-// Route: Get /api/v1/categories
-// Access: Private
+/** ****************************************************************************
+ * Get All Categories
+ * Route: GET /api/v1/categories
+ * Access: Private
+ **************************************************************************** */
 exports.getCategories = async (req, res, next) => {
   const categories = await Category.find();
   res.status(200)
@@ -11,10 +13,11 @@ exports.getCategories = async (req, res, next) => {
       data: categories,
     });
 };
-
-// Get selected category
-// Route: Get api/v1/categories/{id}
-// Access: Private
+/** ****************************************************************************
+ * Get Selected Category
+ * Route: GET api/v1/categories/{id}
+ * Access Private
+ **************************************************************************** */
 exports.getCategory = async (req, res, next) => {
   const category = await Category.findById(req.params.id);
   if (!category) {
@@ -33,7 +36,7 @@ exports.getCategory = async (req, res, next) => {
 
 /** ****************************************************************************
  * Update Category
- * Route: Put /api/v1/categories
+ * Route: PUT /api/v1/categories
  * Access: Private
  **************************************************************************** */
 exports.updateCategory = async (req, res, next) => {
@@ -66,7 +69,7 @@ exports.updateCategory = async (req, res, next) => {
 
 /** ****************************************************************************
  * Create Category
- * Route: Post /api/v1/categories
+ * Route: POST /api/v1/categories
  * Access: Private
  **************************************************************************** */
 exports.createCategory = async (req, res, next) => {
@@ -88,7 +91,7 @@ exports.createCategory = async (req, res, next) => {
 
 /** ****************************************************************************
  * Delete Category
- * Route: Delete /api/v1/{id}
+ * Route: DELETE /api/v1/{id}
  * Access: Private
  **************************************************************************** */
 exports.deleteCategory = async (req, res, next) => {
