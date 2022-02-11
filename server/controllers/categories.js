@@ -16,7 +16,7 @@ exports.getCategories = async (req, res, next) => {
 // Route: Get api/v1/categories/{id}
 // Access: Private
 exports.getCategory = async (req, res, next) => {
-  const category = await Category.findById(req.param.id);
+  const category = await Category.findById(req.params.id);
   if (!category) {
     res.status(400)
       .json({
