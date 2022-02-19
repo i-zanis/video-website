@@ -86,7 +86,7 @@ exports.createCategory = async (req, res, next) => {
  **************************************************************************** */
 exports.deleteCategory = async (req, res, next) => {
   try {
-    const category = Category.find(req.body);
+    const category = await Category.findById(req.params.id);
     if (!category) {
       return next(new ApiError(`${Msg.NO_CATEGORY_ERR}${req.params.id}`, 404));
     }
