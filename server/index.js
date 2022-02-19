@@ -5,10 +5,11 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const DBConnect = require('./config/mongo-db');
 const categoryRoutes = require('./routes/category');
+const errorHandler = require('./middleware/error-handler');
 
 dotenv.config({ path: './config/.env' });
 const app = express();
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT || 3000;
 
 DBConnect()
   .then(
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 // parses json
 app.use(express.json());
 app.use('/api/v1/categories', categoryRoutes);
+app.use(errorHandler);
 
 const message = `App running on http://localhost:${PORT}`;
 app.listen(PORT, () => {

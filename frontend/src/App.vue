@@ -1,11 +1,9 @@
 <template>
-  <div id="index">
-    <img
-      alt="Vue logo"
-      src="frontend/src/assets/logo.png"
-    >
-    <HelloWorld msg="Welcome to Your Vuecategory.js App" />
-  </div>
+  <img
+    alt="Vue logo"
+    src="./assets/logo.png"
+  >
+  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
@@ -20,7 +18,7 @@ export default {
 </script>
 
 <style>
-#index {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

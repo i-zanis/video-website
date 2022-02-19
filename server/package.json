@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "nodemon server/index.js",
-    "start": "node server/index.js"
+    "dev": "../node_modules/.bin/nodemon server/index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "colors": "^1.4.0",
@@ -16,12 +13,8 @@
     "mongoose": "^6.0.11",
     "mongoose-unique-validator": "^3.0.0",
     "morgan": "^1.10.0",
-    "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -58,7 +51,7 @@
     "not dead"
   ],
   "description": "## Project setup ``` npm install ```",
-  "main": "babel.config.js",
+  "main": "../babel.config.js",
   "keywords": [],
   "author": "i-zanis",
   "license": "ISC"

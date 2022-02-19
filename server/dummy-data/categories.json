@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Dance Pop",
+    "description": "Dancing Barbies' head roll",
+    "_id": "62045dfb7616746ff823dff3"
+  },
+  {
+    "title": "Pop-Rock",
+    "description": "Jonas Bros favourite rhyme",
+    "_id": "62042dfb7616748ff823dff3"
+  },
+  {
+    "title": "Underground Rap",
+    "description": "Cadillacs & Rapping Mofos",
+    "_id": "62042dfb7616747ff823dff3"
+  },
+  {
+    "title": "Finnish Metal",
+    "description": "Metal that is not finished yet",
+    "_id": "62042dfb7616746ff823dff5"
+  }
+]
