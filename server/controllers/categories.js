@@ -21,14 +21,19 @@ exports.getCategories = async (req, res, next) => {
  * Route: GET api/v1/categories/{id}
  * Access Private
  **************************************************************************** */
-
 exports.getCategory = async (req, res, next) => {
   try {
     const category = await Category.findById(req.params.id);
     if (!category) {
       return next(new ApiError(`${Msg.NO_CATEGORY_ERR}${req.params.id}`, 404));
     }
+    return res.status(200)
+      .json({
+        success: true,
+        data: category,
+      });
   } catch (e) {
+    console.log('Error in getCategory');
   }
 };
 
@@ -97,5 +102,6 @@ exports.deleteCategory = async (req, res, next) => {
         category,
       });
   } catch (e) {
+    console.log(e);
   }
 };
