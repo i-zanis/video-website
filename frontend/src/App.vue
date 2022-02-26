@@ -1,9 +1,7 @@
 <template>
   <v-app>
-    <router-view name="NavBar"></router-view>
-    <v-content
-    >
-      <NavBar></NavBar>
+    <v-content>
+      <LoginDialog></LoginDialog>
       <router-view></router-view>
     </v-content>
   </v-app>
@@ -11,12 +9,15 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue';
+import LoginDialog from '@/components/LoginDialog.vue';
 
-export default €
+export default {
   name: 'App',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     NavBar,
-  },
+      LoginDialog,
+  }
 };
 </script>
 
